@@ -1,5 +1,7 @@
 package com.joelbland.shades;
 
+import android.app.Application;
+import android.view.Gravity;
 import android.view.View;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -31,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
         int ROWS = 3;
         int COLUMNS = 1;
 
+        String goldIs = getResources().getString(R.string.gold_is);
+        String plumIs = getResources().getString(R.string.plum_is);
+        String blueIs = getResources().getString(R.string.blue_is);
+        String GOLD = getResources().getString(R.string.GOLD);
+        String PLUM = getResources().getString(R.string.PLUM);
+        String BLUE = getResources().getString(R.string.BLUE);
+        String buttonBackground = getResources().getString(R.string.button_background);
+        String viewBackground = getResources().getString(R.string.view_background);
+
         // Get screen dimensions
         int screenHeight = getWindowManager().getCurrentWindowMetrics().getBounds().height();
         int screenWidth = getWindowManager().getCurrentWindowMetrics().getBounds().width();
@@ -42,48 +53,44 @@ public class MainActivity extends AppCompatActivity {
         GridLayout gridLayout = new GridLayout( this );
         gridLayout.setColumnCount( COLUMNS );
         gridLayout.setRowCount( ROWS );
-        gridLayout.setBackgroundColor(Color.parseColor("#c89b6d"));
+        gridLayout.setBackgroundColor(Color.parseColor(viewBackground));
 
         // Create buttons and add them to gridLayout
         Button [] button = new Button[3];
+
         for( int i=0; i < 3; i++) {
             button[i] = new Button(this);
-            button[i].setText("1");
             button[i].setTextSize(28);
-            //button[i].setBackgroundColor(Color.parseColor("#AC7D50"));
+            //button[i].setBackgroundColor(Color.parseColor(buttonBackground));
             gridLayout.addView(button[i], screenWidth, buttonHeight);
         }
+
+        // Set each button text
+        button[0].setText(PLUM);
+        button[1].setText(BLUE);
+        button[2].setText(GOLD);
+
+        // Create a TextView to show the output
         status = new TextView( this );
-
-
         // set up status' characteristics
         status.setWidth(screenWidth);
         status.setHeight(350);
-        status.setGravity(View.TEXT_ALIGNMENT_CENTER);
-        status.setBackgroundColor( Color.GREEN );
-        status.setTextSize(28);
-        status.setText("HELLO, Jerry!");
+        status.setGravity(Gravity.CENTER);
+        status.setBackgroundColor(Color.parseColor(buttonBackground));
+        status.setTextSize(14);
+
+        // if button press 1 = then, else
+        System.out.println(">>>***---!!!DEBUG!!!---***<<<");
+        System.out.println(goldIs);
+        System.out.println("^^^***---!!!DEBUG!!!---***^^^");
+        status.setText("");
+
+        // Add the TextView to the GridLayout
         gridLayout.addView(status);
-
-
-        // Create the buttons and add them to gridLayout
-/*        buttons = new Button[ROWS][COLUMNS];
-
-        for( int row = 0; row < ROWS; row++ ) {
-            for( int col = 0; col < COLUMNS; col++ ) {
-                buttons[row][col] = new Button( this );
-                buttons[row][col].setBackgroundColor(Color.parseColor("#ac7d50"));
-                gridLayout.addView( buttons[row][col], screenWidth, buttonHeight );
-
-            }
-        }*/
 
         // Set gridLayout as the View of this Activity
         setContentView( gridLayout );
     }
-    private class ButtonHandler implements View.OnClickListener {
-        public void onClick( View v ) {
 
-        }
-    }
+
 }
