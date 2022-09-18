@@ -25,11 +25,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState );
-        // Call the buildGuiByCode method to create the GUI.
-        buildGuiByCode( );
-    }
-
-    public void buildGuiByCode( ) {
+        setContentView(R.layout.activity_main);
+        ConstraintLayout layout = findViewById(R.id.mainActivity);
         int ROWS = 3;
         int COLUMNS = 1;
 
@@ -60,7 +57,11 @@ public class MainActivity extends AppCompatActivity {
 
         for( int i=0; i < 3; i++) {
             button[i] = new Button(this);
+            button[i].setId(View.generateViewId());
+            button[i].setTag("btn" + i);
             button[i].setTextSize(28);
+            //button[i].setBackgroundColor(Color.parseColor(buttonBackground));
+            button[i].setOnClickListener(btnClick);
             //button[i].setBackgroundColor(Color.parseColor(buttonBackground));
             gridLayout.addView(button[i], screenWidth, buttonHeight);
         }
@@ -79,10 +80,7 @@ public class MainActivity extends AppCompatActivity {
         status.setBackgroundColor(Color.parseColor(buttonBackground));
         status.setTextSize(14);
 
-        // if button press 1 = then, else
-        System.out.println(">>>***---!!!DEBUG!!!---***<<<");
-        System.out.println(goldIs);
-        System.out.println("^^^***---!!!DEBUG!!!---***^^^");
+        // Set the status text to null to begin
         status.setText("");
 
         // Add the TextView to the GridLayout
@@ -90,7 +88,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Set gridLayout as the View of this Activity
         setContentView( gridLayout );
+
     }
 
-
+    private View.OnClickListener btnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch((String) view.getTag()){
+                case "btn0":
+                    status.setText(getResources().getString(R.string.plum_is));
+                    break;
+                case "btn1":
+                    status.setText(getResources().getString(R.string.blue_is));
+                    break;
+                case "btn2":
+                    status.setText(getResources().getString(R.string.gold_is));
+                    break;
+            }
+        }
+    };
 }
