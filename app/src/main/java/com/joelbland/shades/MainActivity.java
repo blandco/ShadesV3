@@ -1,23 +1,13 @@
 package com.joelbland.shades;
 
-import android.app.Application;
 import android.view.Gravity;
 import android.view.View;
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
-
 import android.widget.TextView;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.Space;
-
-import com.google.android.material.button.MaterialButtonToggleGroup;
 
 public class MainActivity extends AppCompatActivity {
     private TextView status;
