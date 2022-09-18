@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState );
         setContentView(R.layout.activity_main);
-        ConstraintLayout layout = findViewById(R.id.mainActivity);
         int ROWS = 3;
         int COLUMNS = 1;
         int TV_HEIGHT = 350;
