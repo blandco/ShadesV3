@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
         gridLayout.setBackgroundColor(Color.parseColor(getResources().getString(R.string.view_background)));
 
         // Create an array of buttons and add them to gridLayout
-        Button [] button = new Button[3];
+        Button [] button = new Button[ROWS];
 
         // Loop through the array and create buttons
-        for( int i=0; i < 3; i++) {
+        for( int i=0; i < ROWS; i++) {
             button[i] = new Button(this);
             // Set attributes for each button
             button[i].setId(View.generateViewId());
