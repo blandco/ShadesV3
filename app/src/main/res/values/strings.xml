@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HW3 Ex 2</string>
+    <string name="app_name">Shades</string>
     <string name="plum_is">Plum is a deep purple color. It is used in weddings. </string>
     <string name="blue_is">Blue is the color of peace and trust.</string>
     <string name="gold_is">Gold is associated with sunshine and knowledge.</string>
@@ -8,4 +8,5 @@
     <string name="BLUE">BLUE</string>
     <string name="button_background">#AC7D50</string>
     <string name="view_background">#C89B6D</string>
+    <string name="appLabel">HW3 Ex2</string>
 </resources>
