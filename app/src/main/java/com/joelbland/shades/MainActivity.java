@@ -16,9 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState );
         setContentView(R.layout.activity_main);
-        int ROWS = 3;
+
+        int ROWS = 3; // Number of rows (or buttons) to create
         int COLUMNS = 1;
-        int TV_HEIGHT = 350;
+        int TV_HEIGHT = 350; // Height of the TextView that shows the output
         int BUTTON_TEXTSIZE = 28;
         int TV_TEXTSIZE = 18;
 
