@@ -85,8 +85,6 @@ public class MainActivity extends AppCompatActivity {
         status.setBackgroundColor(Color.parseColor(getResources().getString(R.string.button_background)));
         status.setTextSize(TV_TEXTSIZE);
 
-        // Set the status text to null to begin
-        status.setText("");
         // Set the TextView to invisible to begin
         status.setVisibility(View.INVISIBLE);
 
